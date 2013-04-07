@@ -41,13 +41,7 @@ object SparkBuild extends Build {
     publishMavenStyle := true,
     //useGpg in Global := true,
     pomExtra := Deps.pomextra,
-    /* publishTo <<= version { (v: String) =>
-      val nexus = "https://oss.sonatype.org/"
-      if (v.trim.endsWith("SNAPSHOT"))
-        Some("sonatype-snapshots" at nexus + "content/repositories/snapshots")
-      else
-        Some("sonatype-staging"  at nexus + "service/local/staging/deploy/maven2")
-    },*/
+  
     libraryDependencies ++= Deps.sharedlibs,
     parallelExecution := false,
     /* Workaround for issue #206 (fixed after SBT 0.11.0) */
