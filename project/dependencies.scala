@@ -17,6 +17,7 @@ object Dep {
 
     //Akka has multiple things like akka-actor, akka-remote and akka-slf4j - this will help to keep same version for all
     val akka        = "2.0.3"
+    val spray       = "1.0-M2.1"
   }
 
   val jetty       = "org.eclipse.jetty"     %   "jetty-server"      % "7.5.3.v20111011"
@@ -34,20 +35,20 @@ object Dep {
   val asm         = "asm"                   %   "asm-all"           % "3.3.1"
   val gprotobuf   = "com.google.protobuf"   %   "protobuf-java"     % "2.4.1"
   val javakaffee  = "de.javakaffee"         %   "kryo-serializers"  % "0.22"
-  val akkaactor   = "com.typesafe.akka"     %   "akka-actor"        % "2.0.3"
-  val akkaremote  = "com.typesafe.akka"     %   "akka-remote"       % "2.0.3"
-  val akkaslf4j   = "com.typesafe.akka"     %   "akka-slf4j"        % "2.0.3"
+  val akkaactor   = "com.typesafe.akka"     %   "akka-actor"        % V.akka
+  val akkaremote  = "com.typesafe.akka"     %   "akka-remote"       % V.akka
+  val akkaslf4j   = "com.typesafe.akka"     %   "akka-slf4j"        % V.akka
   val fastutil    = "it.unimi.dsi"          %   "fastutil"          % "6.4.4"
   val colt        = "colt"                  %   "colt"              % "1.2.0"
-  val spraycan    = "cc.spray"              %   "spray-can"         % "1.0-M2.1"
-  val sprayserver = "cc.spray"              %   "spray-server"      % "1.0-M2.1"
+  val spraycan    = "cc.spray"              %   "spray-can"         % V.spray
+  val sprayserver = "cc.spray"              %   "spray-server"      % V.spray
   val sprayjson   = "cc.spray"              %%  "spray-json"        % "1.1.1"
   val mesos       = "org.apache.mesos"      %   "mesos"             % "0.9.0-incubating"
 
   val flume       = "org.apache.flume"      % "flume-ng-sdk"        % "1.2.0"             % "compile"
   val zkclient    = "com.github.sgroschupf" % "zkclient"            % "0.1"
   val twtr4jstrm  = "org.twitter4j"         % "twitter4j-stream"    % "3.0.3"
-  val akka0mq     = "com.typesafe.akka"     % "akka-zeromq"         % "2.0.3"
+  val akka0mq     = "com.typesafe.akka"     % "akka-zeromq"         % V.akka
 
   val algebird    = "com.twitter"           % "algebird-core_2.9.2" % "0.1.8"
 }
