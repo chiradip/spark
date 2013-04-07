@@ -12,12 +12,12 @@ import Deps._
 
 object SparkBuild extends Build {
 
-  lazy val root = Project("root", file("."), settings = rootSettings) aggregate(core, repl, examples, bagel, streaming)
-  lazy val core = Project("core", file("core"), settings = coreSettings)
-  lazy val repl = Project("repl", file("repl"), settings = replSettings) dependsOn (core) dependsOn (streaming)
-  lazy val examples = Project("examples", file("examples"), settings = examplesSettings) dependsOn (core) dependsOn (streaming)
-  lazy val bagel = Project("bagel", file("bagel"), settings = bagelSettings) dependsOn (core)
-  lazy val streaming = Project("streaming", file("streaming"), settings = streamingSettings) dependsOn (core)
+  lazy val root       = Project("root",      file("."),         settings = rootSettings) aggregate(core, repl, examples, bagel, streaming)
+  lazy val core       = Project("core",      file("core"),      settings = coreSettings)
+  lazy val repl       = Project("repl",      file("repl"),      settings = replSettings) dependsOn (core) dependsOn (streaming)
+  lazy val examples   = Project("examples",  file("examples"),  settings = examplesSettings) dependsOn (core) dependsOn (streaming)
+  lazy val bagel      = Project("bagel",     file("bagel"),     settings = bagelSettings) dependsOn (core)
+  lazy val streaming  = Project("streaming", file("streaming"), settings = streamingSettings) dependsOn (core)
 
   // A configuration to set an alternative publishLocalConfiguration
   lazy val MavenCompile = config("m2r") extend(Compile)
